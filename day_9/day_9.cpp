@@ -58,14 +58,6 @@ int main(int argc,char* argv[]){
         inv_move_rule.insert({el.second,el.first});
     }
 
-    // char d = '>';
-    // try{
-    // d = inv_move_rule.at({-3,0});
-    // }catch(exception e){
-    //     cout<<"exception : "<<e.what()<<endl;
-
-    // }
-    // cout<<d<<"*******"<<endl;
 
     while(true){
         getline(inp_file, s);
