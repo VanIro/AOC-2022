@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 #include<fstream>
 #include<sstream>
 #include<algorithm>
@@ -6,6 +7,7 @@
 #include<array>
 #include<cmath>
 #include<algorithm>
+
 
 
 using namespace std;
@@ -181,6 +183,6 @@ int main(int argc,char* argv[]){
         }
     }
 
-    cout<<"Ans : "<<highest1<<" , "<<highest2<<"->"<<highest1*highest2<<endl;
+    cout<<"Ans : "<<highest1<<" , "<<highest2<<"->"<<fixed<<setprecision(0)<<double(highest1)*highest2<<endl;
     return 0;
 }
