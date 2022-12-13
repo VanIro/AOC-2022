@@ -7,7 +7,6 @@
 
 using namespace std;
 
-#define NUM_HEIGHTS 10
 const bool DEBUG=false;
 
 
@@ -28,6 +27,8 @@ int main(int argc,char* argv[]){
 
     while(true){
         getline(inp_file, s);
+        stringstream ss;
+        ss<<s<<"\n";
                
         if(inp_file.eof()){
 
