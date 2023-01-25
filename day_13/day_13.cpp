@@ -9,6 +9,7 @@
 using namespace std;
 
 const bool DEBUG=false;
+const bool DEBUG2=false;
 
 bool compare(string l, string r){ //l<=r operation
     if(DEBUG) cout<<"comparing "<<l<<" <= "<<r<<endl;
@@ -129,6 +130,24 @@ void part_one(ifstream& inp_file, long int& ans){
     }  
 }
 
+void part_two(ifstream& inp_file, long int& ans){
+    string s;
+
+
+    string first_key="[[2]]";
+    int first_key_pos=1;
+    string second_key="[[6]]";
+    int second_key_pos=2;
+    while(getline(inp_file, s)){
+        if(s.size()==0) continue;
+        if(DEBUG2) cout<<s<<endl;
+        if(!compare(first_key,s)) first_key_pos++;
+        if(!compare(second_key,s)) second_key_pos++;
+        if(DEBUG2) cout<<first_key_pos<<" * "<<second_key_pos<<endl;
+    }
+    ans=first_key_pos*second_key_pos;
+}
+
 int main(int argc,char* argv[]){
 
     if(argc>1){
@@ -143,7 +162,8 @@ int main(int argc,char* argv[]){
 
     long int ans=0;
 
-    part_one(inp_file,ans);
+    // part_one(inp_file,ans);
+    part_two(inp_file,ans);
      
     
     if(DEBUG)  cout<<"\n------------"<<endl;
