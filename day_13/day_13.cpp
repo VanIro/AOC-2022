@@ -98,21 +98,7 @@ bool compare(string l, string r){ //l<=r operation
 
 }
 
-
-int main(int argc,char* argv[]){
-
-    if(argc>1){
-        cout<<"Using Terminal args..."<<endl;
-        cout<<argv[1]<<" vs "<<argv[2]<<" --> "<<"..."<<endl;
-        return 0;
-    }
-    cout<<"Using file..."<<endl;
-
-    ifstream inp_file;
-    inp_file.open("input.txt");
-
-    long int ans=0;
-
+void part_one(ifstream& inp_file, long int& ans){
     string s1,s2;
     string ls1,ls2;
 
@@ -140,7 +126,25 @@ int main(int argc,char* argv[]){
 
             break;
         }
-    }   
+    }  
+}
+
+int main(int argc,char* argv[]){
+
+    if(argc>1){
+        cout<<"Using Terminal args..."<<endl;
+        cout<<argv[1]<<" vs "<<argv[2]<<" --> "<<"..."<<endl;
+        return 0;
+    }
+    cout<<"Using file..."<<endl;
+
+    ifstream inp_file;
+    inp_file.open("input.txt");
+
+    long int ans=0;
+
+    part_one(inp_file,ans);
+     
     
     if(DEBUG)  cout<<"\n------------"<<endl;
 
