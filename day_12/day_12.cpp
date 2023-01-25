@@ -15,6 +15,8 @@ using namespace std;
 const bool DEBUG=true;
 const bool PART_1=false;
 
+//djikstra's algorithm has been implemented to solve the problems
+
 struct FrontierClass{
     array<int,2> loc;
     int length;
