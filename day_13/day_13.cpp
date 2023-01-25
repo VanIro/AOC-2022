@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const bool DEBUG=true;
+const bool DEBUG=false;
 
 bool compare(string l, string r){ //l<=r operation
     if(DEBUG) cout<<"comparing "<<l<<" <= "<<r<<endl;
@@ -62,10 +62,12 @@ bool compare(string l, string r){ //l<=r operation
         if(l[l_mark]=='[' || r[r_mark]=='[') continue;
 
         int l_int=0;
+        if(!isdigit(l[l_mark])) l_int=-1;
         while(isdigit(l[l_mark])){
             l_int=l_int*10+l[l_mark++]-'0';
         }
         int r_int=0;
+        if(!isdigit(r[r_mark])) r_int=-1;
         while(isdigit(r[r_mark])){
             r_int=r_int*10+r[r_mark++]-'0';
         }
@@ -87,7 +89,7 @@ bool compare(string l, string r){ //l<=r operation
                 if(DEBUG) cout<<"list_level"<<endl;
                 return true;
             }
-            if( l[l_mark-1]=='[' ){ //left was empty list means right was also empty list, else right would have been greater
+            if( l[l_mark-1]=='[' ){ //left was empty list means right was also empty list, else right would have been greater <note: this is because empty list evaluates to -1 >
                 if(DEBUG) cout<<"List end <both emp>..."<<endl;
                 return l_level<r_level; // less level would run out first
             }
@@ -124,6 +126,7 @@ int main(int argc,char* argv[]){
 
         if(compare(s1,s2)){
             if(DEBUG) cout<<"True"<<"\n";
+            // cout<<pair_ind<<endl;
             ans+=pair_ind;
         }
         else{
